@@ -26,3 +26,4 @@ print(role == 'admin' or role == 'seller')
 
 #Aqui aprendi a usar NOT
 print(not true)
+print(not false)
