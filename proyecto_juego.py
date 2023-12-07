@@ -1,7 +1,7 @@
 #Juego piedra papel o tijera
 
 #Declarar 2 variables: jugador y pc
-jugador = input('piedra, papel o tijera: ')
+jugador = input('piedra, papel o tijera: ').lower().strip()
 pc = 'papel'
 
 #Condicionales
