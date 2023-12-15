@@ -27,65 +27,53 @@ tel = input ('Introduce un numero de telefono con el formato +xx-xxxxxxxxx-xx')
 print('El numero de telefono es ', tel[4:-3])
 '''
 
-#Ejercicio 5: Para tributar un determinado impuesto se debe ser mayor de 16 años y tener unos ingresos iguales o superiores a 1000 € mensuales. Escribir un programa que pregunte al usuario su edad y sus ingresos mensuales y muestre por pantalla si el usuario tiene que tributar o no.
+#Ejercicio 5: Escribir un programa que pida al usuario que introduzca una frase en la consola y muestre por pantalla la frase invertida.
 '''
-user = int(input('¿Cual es tu edad? '))
-ingreso = int(input('¿Cuanto ingreso recibes al mes? '))
-
-if user >= 16:
-    if ingreso >= 1000:
-        print('Puedes tributar')
-    else:
-        print('Debes ganar mas de 1000 Euros mensuales para poder tributar')
-else:
-    print('Debes tener mas de 16 años para poder tributar')
+print('Este programa invierte frases')
+user = input('Introduce una frase:')
+print('Tu frase invertida es: ' + user[::-1])
 '''
-
-#Ejercicio 6: Los alumnos de un curso se han dividido en dos grupos A y B de acuerdo al sexo y el nombre. El grupo A esta formado por las mujeres con un nombre anterior a la M y los hombres con un nombre posterior a la N y el grupo B por el resto. Escribir un programa que pregunte al usuario su nombre y sexo, y muestre por pantalla el grupo que le corresponde.
+#Ejercicio 6: Escribir un programa que pida al usuario que introduzca una frase en la consola y una vocal, y después muestre por pantalla la misma frase pero con la vocal introducida en mayúscula.
 '''
-name = input('Introduce tu primer nombre: ')
-gender = input('Introduce tu sexo:("M" o "F") ')
-
-if gender == 'M':
-    if name.lower() < 'm':
-        group = 'A'
-    else:
-        group = 'B'
-else:
-    if name.lower() > 'n':
-        group = 'A'
-    else:
-        group = 'B'
-
-print('Tu equipo es ' + group)
+print('Este programa hace que la vocal que indiques se ponga en mayuscula')
+user = input('Introduce una palabra: ')
+vocal = input('Introduce una vocal en minuscula: ')
+print(user.replace(vocal, vocal.upper()))
 '''
 
-#Ejercicio 7:Escribir un programa que pregunte al usuario su renta anual y muestre por pantalla el tipo impositivo que le corresponde.
+#Ejercicio 7: Escribir un programa que pregunte el correo electrónico del usuario en la consola y muestre por pantalla otro correo electrónico con el mismo nombre (la parte delante de la arroba @) pero con dominio ceu.es.
 '''
-user = int(input('¿Cual es su renta anual?(Euros)'))
-if user < 10000:
-    print('Tu tipo impositivo es del 5%')
-else:
-    if user >= 10000 and user <= 20000:
-        print('Tu tipo impositivo es del 15%')
-    else:
-        if user >= 20000 and user <= 35000:
-            print('Tu tipo impositivo es del 20%')
-        else:
-            if user >= 35000 and user <= 60000:
-                print('Tu tipo impositivo es del 30%')    
-            else:
-                 if user >= 60000:
-                    print('Tu tipo impositivo es del 45%')     
+user = input('Introduce tu correo electronico: ')
+print(user[:user.find('@')] + '@ceu.es')
 '''
 
+#Ejercicio 8: Escribir un programa que pregunte por consola el precio de un producto en euros con dos decimales y muestre por pantalla el número de euros y el número de céntimos del precio introducido.
+'''
+euros = str(input('¿Cual es el precio de tu producto en euros? (Con dos decimales) '))
+print('El precio del producto es de ' + euros[: euros.find('.')] + ' euros y ' + euros[euros.find('.')+1:] + ' centimos.' )
+'''
 
+#Ejercicio 9:Escribir un programa que pregunte al usuario la fecha de su nacimiento en formato dd/mm/aaaa y muestra por pantalla, el día, el mes y el año. Adaptar el programa anterior para que también funcione cuando el día o el mes se introduzcan con un solo carácter.
+'''
+fecha = str(input('Escribe tu fecha de nacimiento en el siguiente fromato: (dd/mm/aaaa)'))
+print('Tu dia de nacimiento es ' + fecha[: fecha.find('/')] + ' del mes ' + fecha[fecha.find('/')+1:-5] + ' y año ' + fecha[fecha.find('/')+4:])
 
+#otra solucion
+fecha = input("Introduce la fecha de tu nacimiento en formato dd/mm/aaaa: ")
+print('Día', fecha[:2])
+print('Mes', fecha[3:5])
+print('Año', fecha[6:])
+'''
 
-
-
-
-
-
-
-
+#Ejercicio 10:Escribir un programa que pregunte por consola por los productos de una cesta de la compra, separados por comas, y muestre por pantalla cada uno de los productos en una línea distinta.
+'''
+user = input('Introduce tu lista de compras separado por coma: ')
+print(user.replace(',', '\n'))
+'''
+#Ejercicio 11:Escribir un programa que pregunte el nombre el un producto, su precio y un número de unidades y muestre por pantalla una cadena con el nombre del producto seguido de su precio unitario con 6 dígitos enteros y 2 decimales, el número de unidades con tres dígitos y el coste total con 8 dígitos enteros y 2 decimales.
+'''
+producto = input('Introduce el nombre del producto: ')
+precio = float(input('Introducde el precio unitario: '))
+unidades = int(input('Introduce el {número de unidades: '))
+print('{producto}: {unidades:03d} unidades x {precio:9.2f}€ = {total:11.2f}€'.format(producto = producto, unidades = unidades, precio = precio, total = unidades * precio))
+'''
