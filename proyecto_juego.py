@@ -13,9 +13,17 @@ while True:
     print('ROUND', rounds)
     print('*' * 10)
 
+    print('victorias del jugador', user_wins)
+    print('victorias de la computadora', computer_wins)
+
+
     #Declarar 2 variables: jugador y pc
     jugador = input('piedra, papel o tijera: ').lower().strip()
     pc = random.choice(options)
+
+    if not jugador in options:
+        print('Esa opcion no es valida')
+        continue
 
     print('El jugador escogio: ', jugador)
     print('El pc escogio: ', pc)
@@ -30,11 +38,11 @@ while True:
         print('Perdiste')
         computer_wins += 1
 
-    if computer_wins == 2:
+    if computer_wins == 3:
         print('¡El computador gano!')
         break
 
-    if user_wins == 2:
+    if user_wins == 3:
         print('¡Ganaste la partida!')
         break
 
