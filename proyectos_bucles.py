@@ -107,15 +107,53 @@ print("Contraseña correcta")
 '''
 
 #Ejercicio 10: Escribir un programa que pida al usuario un número entero y muestre por pantalla si es un número primo o no.
+'''
+numero= int(input("¿Qué número quieres saber si es primo? "))
+valor= range(2,numero)
+contador = 0
+for n in valor:
+  if numero % n == 0:
+    contador +=1
+    print("divisor:", n)
+ 
+if contador > 0 :
+  print("El número no es primo" )
+else:
+  print("El nÚmero es primo")
+'''
 
-n = int(input('Digita tu numero entero: '))
+#Ejercicio 11: Escribir un programa que pida al usuario una palabra y luego muestre por pantalla una a una las letras de la palabra introducida empezando por la última.
+'''
+p = input('Introduce una palabra: ')
+for i in p[::-1]:
+    print(i)
+'''
 
-for i in range(2, n-1):
-    if (n%i) == 0:
-        print('Es un numero primo')
-    else:
-        print('No es un numero primo')
+#Ejercicio 12: Escribir un programa en el que se pregunte al usuario por una frase y una letra, y muestre por pantalla el número de veces que aparece la letra en la frase.
+'''
+f = input('Introduce una frase: ')
+l = input('Introduce una letra: ')
+print(f.count(l))
 
+#otra solucion:
+
+frase = input("Introduce una frase: ")
+letra = input("Introduce una letra")
+contador = 0
+for i in frase:
+    if i == letra:
+        contador += 1
+print("La letra '%s' aparece %2i veces en la frase '%s'." % (letra, contador, frase))
+'''
+
+#Ejercicio 13: Escribir un programa que muestre el eco de todo lo que el usuario introduzca hasta que el usuario escriba “salir” que terminará.
+'''
+while True:
+    frase = input("Introduce algo: ")
+    if frase == "salir":
+        break
+    print(frase)
+'''
 
 
 
