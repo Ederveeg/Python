@@ -160,16 +160,3 @@ for i in range(len(result)):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
