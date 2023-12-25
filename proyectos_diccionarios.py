@@ -135,11 +135,101 @@ rojo:red, azul:blue, amarillo:yellow
 '''
 
 #Ejercicio 8:Escribir un programa que cree un diccionario de traducción español-inglés. El usuario introducirá las palabras en español e inglés separadas por dos puntos, y cada par <palabra>:<traducción> separados por comas. El programa debe crear un diccionario con las palabras y sus traducciones. Después pedirá una frase en español y utilizará el diccionario para traducirla palabra a palabra. Si una palabra no está en el diccionario debe dejarla sin traducir.
+'''
+diccionario = {}
+palabras = input("Introduce la lista de palabras y traducciones en formato palabra:traducción separadas por comas: ")
+for i in palabras.split(','):
+    clave, valor = i.split(':')
+    diccionario[clave] = valor
+frase = input('Introduce una frase en español: ')
+for i in frase.split():
+    if i in diccionario:
+        print(diccionario[i], end=' ')
+    else:
+        print(i, end=' ')
+'''
 
-traduccion = {}
-trad = input('Introduce la palabra en español e inglés en el siguiente formato: <Españo>:<inglés>,')
-traduccion['Trad1'] = trad
-print (traduccion)
+#Ejercicio 9:Escribir un programa que gestione las facturas pendientes de cobro de una empresa. Las facturas se almacenarán en un diccionario donde la clave de cada factura será el número de factura y el valor el coste de la factura. El programa debe preguntar al usuario si quiere añadir una nueva factura, pagar una existente o terminar. Si desea añadir una nueva factura se preguntará por el número de factura y su coste y se añadirá al diccionario. Si se desea pagar una factura se preguntará por el número de factura y se eliminará del diccionario. Después de cada operación el programa debe mostrar por pantalla la cantidad cobrada hasta el momento y la cantidad pendiente de cobro.
+'''
+facturas = {
+    '#0123':546,
+    '#2133':231,
+}
+continuar = True
+while continuar:
+    user = int(input('Si quieres añadir una factura presiona (1), si quieres pagar una existente presiona (2), si quieres terminar presiona (3): '))
+    if user == 1:
+        fac = input('¿Cual es el número de tu factura (#1234)? ')
+        costo = int(input('¿Cuanto se cobra en la factura? '))
+        facturas[fac] = costo
+        print(facturas)
+        print('Queda por pagar $ ', sum(facturas.values()), ' MXN')
+    else:
+        if user == 2:
+            print(facturas)
+            busc = input('De las facturas que aparecen en pantalla cual desea pagar(#1234)? ')
+            print('El monto a pagar es de $ ' + str(facturas.get(busc)) + ' MXN')
+            print('¡El pago se ha realizado con éxito!')
+            print('Se ha pagado $', str(facturas.get(busc)), ' MXN')
+            print('Queda por pagar $', sum(facturas.values()), 'MXN')
+            facturas.pop(busc)
+        else:
+            if  user == 3:
+                continuar = input('¿Quieres seguir usando el programa(y/n)? ') == "y"
+'''
+            
+#Ejercicio 10: Escribir un programa que permita gestionar la base de datos de clientes de una empresa. Los clientes se guardarán en un diccionario en el que la clave de cada cliente será su NIF, y el valor será otro diccionario con los datos del cliente (nombre, dirección, teléfono, correo, preferente), donde preferente tendrá el valor True si se trata de un cliente preferente. El programa debe preguntar al usuario por una opción del siguiente menú: (1) Añadir cliente, (2) Eliminar cliente, (3) Mostrar cliente, (4) Listar todos los clientes, (5) Listar clientes preferentes, (6) Terminar.
+'''
+base_datos = {
+    'NF2314':{'nombre':'Alvaro Ortiz', 'direccion':'Avasolo #23', 'tel':'443-234-2122', 'correo':'Alvaro1@gmail.com', 'preferente':True,},
+    'NF1234':{'nombre':'Alin Sanchez', 'direccion':'Martinez #344', 'tel':'876-345-9021', 'correo':'Gato23@gmail.com', 'preferente':False,}
+}
+continuar = True
+while continuar:
+    user = int(input('¿Que deseas hacer? (1)Añadir cliente, (2)Eliminar cliente, (3)Mostrar cliente, (4)Listar todos los clientes, (5)Listar clientes preferentes, (6)Terminar: '))
+    if user == 1:
+        Nif = input('Introduce el NIF del cliente: ')
+        nombre = input('Introduce el nombre del cliente: ')
+        direccion = input('Introduce la dirección del cliente: ')
+        tel = input('Escribe el teléfono del cliente: ')
+        correo = input('Introduce el correo del cliente: ')
+        vip = input('¿El cliente es preferente? (S/N)')
+        cliente = {'nombre':nombre, 'direccion':direccion, 'tel':tel, 'correo':correo, 'preferente':vip=='S'}
+        base_datos[Nif] = cliente
+        print('¡El cliente se añadio con éxito!')
+    if user == 2:
+        Nif = input('Introduce el NIF del cliente que quieres borrar: ')
+        if Nif in base_datos:
+            base_datos.pop(Nif)
+            print('¡El cliente se ha eliminado de la base de datos correctamente!')
+        else:
+            print('Verifica que el NIF este correcto y vuelve a introducirlo')
+    if user == 3:
+        Nif = input('Introduce el NIF del cliente que deseas ver: ')
+        print(base_datos.get(Nif))
+    if user == 4:
+        print('Lista de clientes')
+        for clave, valor in base_datos.items():
+            print(clave,valor['nombre'])
+    if user == 5:
+        print('Lista de clientes preferentes')
+        for clave, valor in base_datos.items():
+            if valor['preferente']:
+                print(clave, valor['nombre'])
+    if user == 6:
+        continuar = input('¿Seguro que quieres cerrar el programa? (S/N)') == 'N'
+'''
+
+
+
+
+ 
+
+
+
+
+
+
 
 
 
