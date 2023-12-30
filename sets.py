@@ -30,7 +30,9 @@ print(set_numbers)
 unique_numbers = list(set_numbers)
 print(unique_numbers)
 '''
+#PARTE 2
 #Se pueden buscar las cosas cómo en cualquier lista con len
+'''
 set_fruit = {'pear', 'apple', 'strawberry'}
 
 size  = len(set_fruit)
@@ -38,31 +40,59 @@ print(size)
 
 print('apple' in set_fruit)
 print('pineapple' in set_fruit)
-
+'''
 #con .add podemos agregar caracteres al set
+'''
 set_fruit.add('pineapple')
 print(set_fruit)
 set_fruit.add('pineapple')
 print(set_fruit)
-
+'''
 #.update
+'''
 set_fruit.update({'watermelon', 'banana', 'apple'})
 print(set_fruit)
-
+'''
 #.remove si no encuentra tu caracter o esta mal escrito te lanzara error
+'''
 set_fruit.remove('apple')
 print(set_fruit)
-
+'''
 #.discard si no encuentra el caracter no lanza error, solo te avisa que no encontro la key
+'''
 set_fruit.discard('orange')
 print(set_fruit)
-
+'''
 #.clear limpia todo el conjunto
+'''
 set_fruit.clear()
 print(set_fruit)
+'''
+#PARTE 3
+#Operaciónes en conjunto
 
+set_a = {'col', 'mex', 'bol'}
+set_b = {'pe', 'bol'}
 
+#.union une los conjuntos, el segundo metodo es lo mismo y se encuentra en print
+set_c = set_a.union(set_b)
+print(set_c)
+print(set_a | set_b)
 
+#.intersection sirve para ver cuales son los caracteres que son iguales
+set_c = set_a.intersection(set_b)
+print(set_c)
+print(set_a & set_b)
+
+#.difference le resta el segundo conjunto al primero
+set_c = set_a.difference(set_b)
+print(set_c)
+print(set_a - set_b)
+
+#.symmetric_difference solo hace unión si los elementos coinciden
+set_c = set_a.symmetric_difference(set_b)
+print(set_c)
+print(set_a ^ set_b)
 
 
 
