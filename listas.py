@@ -17,6 +17,7 @@ text = 'Hola'
 tasks[0] = 'Watch movies'
 print(tasks)
 '''
+'''
 numbers =[1, 2, 3, 4, 5]
 print(numbers[1])
 
@@ -58,6 +59,29 @@ print(new_list)
 numbers_a = [1, 6, 5, 2, 3]
 numbers_a.sort()
 print(numbers_a) 
+'''
 
+#PARTE 2
+#List comprehension
+'''
+numbers = []
+for element in range(1,11):
+    numbers.append(element * 2)
+
+print(numbers)
+
+numbers_v2 = [element * 2 for element in range(1, 11)]
+print(numbers_v2)
+'''
+
+numbers = []
+for i in range(1,11):
+    if i % 2 == 0:
+        numbers.append(i * 2)
+
+print(numbers)
+#Esta forma de abajo es el list comprehension
+numbers_v2 = [i * 2 for i in range(1, 11) if i % 2 == 0]
+print(numbers_v2)
 
 
