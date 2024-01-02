@@ -1,4 +1,47 @@
-#Archivo sobre el uso distinto de funciones
+#Archivo sobre funciones
+
+#Aqui aprendi el comportamiento de las funciones
+'''
+def my_print(text):
+    print(text * 2)
+
+my_print('Este es mi texto')
+'''
+#Aqui hice una funcion con matematica
+'''
+def suma(a,b,):
+    print(a + b)
+
+suma(1 ,5)
+suma(10, 2)
+'''
+#Funciones retun
+'''
+def sum_with_range(a, b):
+    print(a, b)
+    sum = 0
+    for x in range(a,b):
+        sum += x
+    return sum
+
+result = sum_with_range(1, 10)
+print(result)
+#Aqui  le damos el parametro 45 o sea result y luego suma 45 + 10
+result_2 = sum_with_range(result, result + 10)
+print(result_2)
+'''
+#parametros por defecto y múltiples returns
+
+#Este programa encuentra el volumen de algun objeto o cuerpo
+def find_volume(length=1, width=1, depth=1):
+    return length * width * depth, width, 'Hola'
+#Podemos hacer que solo tome un valor espicifacndo el argumento y asignando un valor
+result = find_volume(width=10)
+
+print(result)
+
+
+
 
 #Argumentos de otras funciones
 '''
@@ -50,4 +93,24 @@ def aplicar_operaciones(num):
  aplicar_operaciones(-2)
 [2, -2.0]
 '''
+
+#PARTE 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
