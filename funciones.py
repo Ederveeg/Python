@@ -33,14 +33,28 @@ print(result_2)
 #parametros por defecto y múltiples returns
 
 #Este programa encuentra el volumen de algun objeto o cuerpo
+'''
 def find_volume(length=1, width=1, depth=1):
     return length * width * depth, width, 'Hola'
 #Podemos hacer que solo tome un valor espicifacndo el argumento y asignando un valor
 result = find_volume(width=10)
 
 print(result)
+'''
+#El scope es el alcance de una variable 
 
+price = 100 # global
 
+def increment():
+    price = 200
+    result = price + 10
+    print(result)
+    return result
+
+print(price)
+price_2 = increment()
+print(price_2)
+print(result)
 
 
 #Argumentos de otras funciones
