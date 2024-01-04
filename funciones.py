@@ -42,7 +42,7 @@ result = find_volume(width=10)
 print(result)
 '''
 #El scope es el alcance de una variable 
-
+'''
 price = 100 # global
 
 def increment():
@@ -54,8 +54,7 @@ def increment():
 print(price)
 price_2 = increment()
 print(price_2)
-print(result)
-
+'''
 
 #Argumentos de otras funciones
 '''

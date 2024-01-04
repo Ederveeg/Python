@@ -35,7 +35,7 @@ while True:
         print('¡Ganaste!')
         user_wins += 1
     else:
-        print('Perdiste')
+        print('¡Perdiste!')
         computer_wins += 1
 
     if computer_wins == 3:
