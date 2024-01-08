@@ -107,22 +107,47 @@ def aplicar_operaciones(num):
 [2, -2.0]
 '''
 
-#PARTE 2
+#Lambdas
+'''
+#Esta funcion es sin lambda
+def increment(x):
+    return x + 1
 
+result = increment(10)
+print(11)
 
+#Esta es con lambda
 
+increment_v2 = lambda x : x + 1
 
+result = increment_v2(20)
+print(result)
 
+#Otra lambda
 
+full_name = lambda name, last_name: f'Full name es {name.title()} {last_name.title()}'
+text = full_name('eder', 'Vega')
+print(text)
+'''
 
+#HOF: Higher order function
 
+def increment(x):
+    return x + 1
 
+increment_v2 = lambda x: x + 1
 
+def hof(x, func):
+    return x + func(x)
 
+hof_v2 = lambda x, func: x + func(x)
 
+result = hof(2, increment)
+#Al final se ejecta 2 + (2 + 1)
+print(result)
 
-
-
+result = hof_v2(2, increment_v2)
+print(result)
 
 
 
